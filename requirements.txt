@@ -1,0 +1,9 @@
+# requirements.txt for QFLIM
+# Note: Install PyTorch separately according to your CUDA / OS:
+# https://pytorch.org/get-started/locally/
+
+numpy>=1.20
+scipy>=1.8
+tifffile>=2021.4.8
+matplotlib>=3.5
+tqdm>=4.60

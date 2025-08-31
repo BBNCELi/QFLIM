@@ -23,7 +23,7 @@ QFLIM (Quantum-Aware First-Photon FLIM) is a self-supervised deep learning metho
 If you do not have experimental raw data, you can generate synthetic photon arrivals using the provided MATLAB scripts.  
 
 Example:  
-```matlab
+```
 ./0_simulations/run_simu_USAF1951.m
 ```
 
@@ -38,26 +38,48 @@ Inside this folder, you will find:
 - **fastflim** (Center of Mass Method, CMM):  ./simu_USAF1951_PPP1/lt_fastflim/lt_fastflim.tif
 - **Intensity-weighted lifetime visualization**, saved with the suffix `_RGB` (e.g., ./simu_USAF1951_PPP1/lt_fastflim/lt_fastflim_RGB.tif)  
 
-1. Arrival time of single photons
-Rearrange the captured data into a series of photon-arrival-time frames. For Becker % Hickle, you should convert SPC file to tiffs. For PicoQuant, you should convert . We recomend at least 500 frames with PPP > 0.5.
 
-If you do not have the raw data, you can simulate photon arrivals using Matlab codes as we provided. Run "run_simu_USAF1951.m" to simulate 500 frames with PPP = 1.
+### 2. Python training and inference
+Once the dataset is prepared, you can train and evaluate QFLIM using the provided Python code.
 
-- **QFLIM** interprets each photon excitation event as a quantum binary process (either no photon or a single first-arrival photon).
-- It effectively leverages spatial-temporal information to denoise and accurately extract fluorescence lifetime even when photon budgets are extremely low.
-- QFLIM has been demonstrated to capture transient intracellular dynamics of ligand-dependent molecular states and multiplexed imaging of lymphocyte interactions during germinal center response.
+#### Requirements
+- **Python ≥ 3.9**  
+- **GPU support** (CUDA-enabled GPU recommended)  
+- **Additional Python packages**:  
+  - numpy  
+  - scipy  
+  - tifffile  
+  - tqdm  
+  - matplotlib  
 
-## Installation
 
-### Requirements
-- Python 3.x
-- PyTorch
-- NumPy
-- Matplotlib
-- Other dependencies listed in `requirements.txt`
+#### Create a new conda environment (recommended):
+```bash
+conda create -n qflim python=3.10 -y
+conda activate qflim
+```
 
-### Install Dependencies
-To install all the required dependencies, run the following:
+#### GPU support
+To run QFLIM efficiently on a GPU, make sure you have a working CUDA toolkit installed.
+The recommended way is to install PyTorch together with the matching CUDA version directly from the [official PyTorch website](https://pytorch.org/get-started/locally/).
 
+For example, on a machine with **CUDA 11.8**, you can install PyTorch with:
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+```
+
+#### Install dependencies:
 ```bash
 pip install -r requirements.txt
+```
+
+#### Training example:
+```bash
+python run_QFLIM.py \
+  --folderName .//simu_USAF1951_PPP1//raw
+```
+
+This script will:
+- Read the raw data
+- Perform training and inference for both lifetime and intensity
+- Generate an **intensity-weighted lifetime visualization** as one of the outputs, saved with the suffix  `_RGB`
