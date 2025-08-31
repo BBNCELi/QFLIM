@@ -12,7 +12,7 @@ def main():
     parser = argparse.ArgumentParser(description="Running QFLIM.")
 
     ## input data and savepath
-    parser.add_argument("--folderName", type=str, default='..//simu_USAF1951_PPP1//raw', help="folder of raw photons")
+    parser.add_argument("--folderName", type=str, default='.//simu_USAF1951_PPP1//raw', help="folder of raw photons")
     parser.add_argument("--savepath", type=str, default=None, help="save results here")
 
     ## training parameters
