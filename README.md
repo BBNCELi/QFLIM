@@ -1,6 +1,12 @@
 # QFLIM: Quantum-Aware First-Photon FLIM
+> **QFLIM**: A self-supervised, quantum-aware deep learning method for ultra-low-light fluorescence lifetime imaging.
 
-QFLIM is a self-supervised denoising method for Fluorescence Lifetime Imaging Microscopy (FLIM) that fully exploits the quantum nature of fluorescence emission. It reduces photon demand by over three orders of magnitude, enabling high-fidelity FLIM even under extreme low-light conditions. QFLIM shows strong robustness to intensity fluctuations, making it ideal for deep-tissue imaging and capturing fast biological dynamics with minimal phototoxicity.
+## Introduction
+
+QFLIM (Quantum-Aware First-Photon FLIM) is a self-supervised deep learning method for fluorescence lifetime imaging microscopy (FLIM). Unlike conventional approaches that rely on photon histograms, QFLIM treats each excitation event as a quantum binary process — either no photon is emitted, or the first-arrival photon is detected with precise timing. By leveraging spatial and temporal context, QFLIM achieves accurate lifetime estimation under extremely low-light conditions, reducing photon demand by over three orders of magnitude. This enables fast, high-fidelity intravital imaging with strong robustness to intensity fluctuations, making QFLIM a powerful tool for studying dynamic biological processes in deep tissue.
+
+
+QFLIM is a self-supervised denoising method for Fluorescence Lifetime Imaging Microscopy (FLIM) that fully exploits the quantum nature of fluorescence emission. It reduces photon demand by over three orders of magnitude, enabling high-fidelity FLIM even under extreme low-light conditions.
 
 ## Overview
 
