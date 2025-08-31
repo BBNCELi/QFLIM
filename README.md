@@ -25,9 +25,12 @@ If you do not have experimental raw data, you can generate synthetic photon arri
 Example:  
 ```matlab
 ./0_simulations/run_simu_USAF1951.m
+```
 
 This script simulates **500 frames** with **PPP = 1** and saves the dataset to:
+```
 ./simu_USAF1951_PPP1
+```
 
 Inside this folder, you will find:
 - **Photon-arrival dataset** : ./simu_USAF1951_PPP1/frame*.tif  
