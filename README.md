@@ -8,7 +8,7 @@ QFLIM (Quantum-Aware First-Photon FLIM) is a self-supervised deep learning metho
 - **Quantum-aware representation**: avoids histogram construction and directly models each excitation event.  
 - **Self-supervised learning**: robust training without the need for paired datasets or ground-truth lifetimes.  
 - **Extreme low light capability**: accurate lifetime estimation even below 1 photon per pixel (PPP).
-- **Robustness to artifacts**: stable performance despite photobleaching, motion, or segnsitivity fluctuations.  
+- **Robustness to artifacts**: stable performance despite photobleaching, motion, or intensity fluctuations.  
 - **Broad applicability**: enables fast, minimally invasive imaging of dynamic molecular processes in vivo.
 
 ## Workflow
@@ -17,7 +17,7 @@ QFLIM (Quantum-Aware First-Photon FLIM) is a self-supervised deep learning metho
 - Rearrange raw photon data into a sequence of photon-arrival-time frames.  
 - For **Becker & Hickl** systems: convert `.SPC` files into `.tif` format.  
 - For **PicoQuant** systems: convert `.PTU` files into `.tif` format.  
-- We recommend using **at least 500 frames** with **PPP > 0.1** in regions of interest.  
+- We recommend using **at least 500 frames** with **PPP > 0.5** in regions of interest.  
 
 ### 1.1. (Optional) Simulation (if raw data are unavailable)
 If you do not have experimental raw data, you can generate synthetic photon arrivals using the provided MATLAB scripts.  
