@@ -42,6 +42,8 @@ def main():
         raise ValueError("Please give a valid folder that contains each frame as a single file")
     if not os.path.isdir(args.folderName):
         raise ValueError("Please give a folder that contains each frame as single file")
+    if not any(f.lower().endswith(".tif", ".tiff") for f in os.listdir(args.folderName)):
+        raise ValueError("Please give a valid folder that contains each frame as a single .tif file")
     if args.savepath is None:
         args.savepath =  os.path.dirname(args.folderName) + f'//QFLIM'
     os.makedirs(args.savepath, exist_ok=True)
