@@ -45,7 +45,7 @@
 %% preparations
 addpath(genpath('./utils'));
 timenow = datestr(now, 'YYYYmmDD_HHMMSS');
-savefolder = ['..//simu_USAF1951_', 'PPP1'];
+savefolder = ['..//simu_USAF1951_', 'PPP0.5'];
 disp(['Results will be saved at ', savefolder]);
 mkdir(savefolder);
 
@@ -55,7 +55,7 @@ sample = single(loadtiff(sampleName)); % ps
 
 %% set parameters
 % PPP, BPP, and IRF_sigma
-ppp = 1;
+ppp = 0.5;
 bpp = 0;
 IRF_sigma = 0; % ps
 
