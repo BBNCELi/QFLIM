@@ -86,7 +86,7 @@ def main():
     ### RGB visualization ###
     #######################################################################################
     lt_contrast = [500, 3500]
-    in_contrast = [0, 1]
+    in_contrast = [0, 0.5]
     colormapName = 'weddingdayblues'
     flag_white = 0
     cm  = findAndLoadMat(colormapName+f"_double.mat", "..//..//")
