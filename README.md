@@ -36,7 +36,7 @@ Inside this folder, you will find:
 - **Photon-arrival dataset** : ./simu_USAF1951_PPP1/raw/frame*.tif  
 - **Ground truth**: ./simu_USAF1951_PPP1/lt_gt/lt_gt.tif
 - **fastflim** (Center of Mass Method, CMM):  ./simu_USAF1951_PPP1/lt_fastflim/lt_fastflim.tif
-- **Intensity-weighted lifetime visualization**, saved with the suffix `_RGB` (e.g., ./simu_USAF1951_PPP1/lt_fastflim/lt_fastflim_RGB.tif), with a colormap [WeddingDayBlues] (https://uigradients.com/#WeddingDayBlues/)
+- **Intensity-weighted lifetime visualization**, saved with the suffix `_RGB` (e.g., ./simu_USAF1951_PPP1/lt_fastflim/lt_fastflim_RGB.tif), with a colormap [WeddingDayBlues](https://uigradients.com/#WeddingDayBlues/)
 
 
 ### 2. Python training and inference
