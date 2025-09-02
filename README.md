@@ -17,7 +17,7 @@ QFLIM (Quantum-Aware First-Photon FLIM) is a self-supervised deep learning metho
 - Rearrange raw photon data into a sequence of photon-arrival-time frames.  
 - For **Becker & Hickl** systems: convert `.SPC` files into `.tif` format.  
 - For **PicoQuant** systems: convert `.PTU` files into `.tif` format.  
-- We recommend using **at least 500 frames** with **PPP > 0.5** in regions of interest.  
+- We recommend using **at least 500 frames** with **PPP > 0.2** in regions of interest.  
 
 ### 1.1. (Optional) Simulation (if raw data are unavailable)
 If you do not have experimental raw data, you can generate synthetic photon arrivals using the provided MATLAB scripts.  
@@ -27,16 +27,16 @@ Example:
 ./0_simulations/run_simu_USAF1951.m
 ```
 
-This script simulates **500 frames** with **PPP = 1** and saves the dataset to:
+This script simulates **500 frames** with **PPP = 0.5** and saves the dataset to:
 ```
-./simu_USAF1951_PPP1
+./simu_USAF1951_PPP0.5
 ```
 
 Inside this folder, you will find:
-- **Photon-arrival dataset** : ./simu_USAF1951_PPP1/raw/frame*.tif  
-- **Ground truth**: ./simu_USAF1951_PPP1/lt_gt/lt_gt.tif
-- **fastflim** (Center of Mass Method, CMM):  ./simu_USAF1951_PPP1/lt_fastflim/lt_fastflim.tif
-- **Intensity-weighted lifetime visualization**, saved with the suffix `_RGB` (e.g., ./simu_USAF1951_PPP1/lt_fastflim/lt_fastflim_RGB.tif), with a colormap [WeddingDayBlues](https://uigradients.com/#WeddingDayBlues/)
+- **Photon-arrival dataset** : ./simu_USAF1951_PPP0.5/raw/frame*.tif  
+- **Ground truth**: ./simu_USAF1951_PPP0.5/lt_gt/lt_gt.tif
+- **fastflim** (Center of Mass Method, CMM):  ./simu_USAF1951_PPP0.5/lt_fastflim/lt_fastflim.tif
+- **Intensity-weighted lifetime visualization**, saved with the suffix `_RGB` (e.g., ./simu_USAF1951_PPP0.5/lt_fastflim/lt_fastflim_RGB.tif), with a colormap [WeddingDayBlues](https://uigradients.com/)
 
 
 ### 2. Python training and inference
@@ -76,7 +76,7 @@ pip install -r requirements.txt
 #### Training example:
 ```bash
 python run_QFLIM.py \
-  --folderName .//simu_USAF1951_PPP1//raw
+  --folderName .//simu_USAF1951_PPP0.5//raw
 ```
 
 This script will:
