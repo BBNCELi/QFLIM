@@ -17,7 +17,7 @@ QFLIM (Quantum-Aware First-Photon FLIM) is a self-supervised deep learning metho
 - Rearrange raw photon data into **a sequence of frames that contain the arrival times of all photons**.
 - For **Becker & Hickl** systems: convert `.SPC` files into `.tif` format.  
 - For **PicoQuant** systems: convert `.PTU` files into `.tif` format.  
-- We recommend using **at least 500 frames** with **PPP > 0.2** in regions of interest.  
+- We recommend using **at least 500 frames** with **PPP > 0.1** in regions of interest.  
 
 ### 1.1. (Optional) Simulation (if raw data are unavailable)
 If you do not have experimental raw data, you can generate synthetic photon arrivals using the provided MATLAB scripts.  
