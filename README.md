@@ -52,14 +52,13 @@ Once the dataset is prepared, you can train and evaluate QFLIM using the provide
   - tqdm  
   - matplotlib  
 
-
-#### Create a new conda environment (recommended):
+### Create a new conda environment (recommended):
 ```bash
 conda create -n qflim python=3.10 -y
 conda activate qflim
 ```
 
-#### GPU support
+### GPU support
 To run QFLIM efficiently on a GPU, make sure you have a working CUDA toolkit installed.
 The recommended way is to install PyTorch together with the matching CUDA version directly from the [official PyTorch website](https://pytorch.org/get-started/locally/).
 
@@ -68,12 +67,12 @@ For example, on a machine with **CUDA 11.8**, you can install PyTorch with:
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 ```
 
-#### Install dependencies:
+### Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-#### Training example:
+### Training example:
 ```bash
 python run_QFLIM.py \
   --folderName .//simu_USAF1951_PPP0.5//raw
