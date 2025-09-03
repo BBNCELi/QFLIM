@@ -14,7 +14,7 @@ QFLIM (Quantum-Aware First-Photon FLIM) is a self-supervised deep learning metho
 ## Workflow
 
 ### 1. Photon-arrival dataset preparation
-- Rearrange raw photon data into a sequence of photon-arrival-time frames.  
+- Rearrange raw photon data into **a sequence of frames that contain the arrival times of all photons**.
 - For **Becker & Hickl** systems: convert `.SPC` files into `.tif` format.  
 - For **PicoQuant** systems: convert `.PTU` files into `.tif` format.  
 - We recommend using **at least 500 frames** with **PPP > 0.2** in regions of interest.  
@@ -33,10 +33,10 @@ This script simulates **500 frames** with **PPP = 0.5** and saves the dataset to
 ```
 
 Inside this folder, you will find:
-- **Photon-arrival dataset** : ./simu_USAF1951_PPP0.5/raw/frame*.tif  
+- **Photon-arrival frames** : ./simu_USAF1951_PPP0.5/raw/frame*.tif  
 - **Ground truth**: ./simu_USAF1951_PPP0.5/lt_gt/lt_gt.tif
-- **fastflim** (Center of Mass Method, CMM):  ./simu_USAF1951_PPP0.5/lt_fastflim/lt_fastflim.tif
-- **Intensity-weighted lifetime visualization**, saved with the suffix `_RGB` (e.g., ./simu_USAF1951_PPP0.5/lt_fastflim/lt_fastflim_RGB.tif), with a colormap [WeddingDayBlues](https://uigradients.com/)
+- **FastFLIM** (center-of-mass method, CMM):  ./simu_USAF1951_PPP0.5/lt_fastflim/lt_fastflim.tif
+- **Intensity-weighted lifetime visualizations**, saved with the default [colormap](https://uigradients.com/) suffix `_weddingdayblues` (e.g., ./simu_USAF1951_PPP0.5/lt_fastflim/lt_fastflim_lt500-3500_in0-0.5_weddingdayblue.tif)
 
 
 ### 2. Python training and inference
@@ -82,4 +82,4 @@ python run_QFLIM.py \
 This script will:
 - Read the raw data
 - Perform training and inference for both lifetime and intensity
-- Generate an **intensity-weighted lifetime visualization** as one of the outputs, saved with the suffix  `_RGB`
+- Generate **lifetime video**、**intensity video** and **intensity-weighted lifetime visualization** as outputs
