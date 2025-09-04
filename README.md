@@ -88,4 +88,4 @@ python run_QFLIM.py \
 This script will:
 - Read the raw data
 - Perform training and inference for both lifetime and intensity
-- Generate **lifetime video**、**intensity video** and **intensity-weighted lifetime visualization** as outputs
+- Generate **lifetime video**, **intensity video** and **intensity-weighted lifetime visualization** as outputs
