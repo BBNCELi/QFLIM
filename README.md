@@ -78,6 +78,13 @@ python run_QFLIM.py \
   --folderName .//simu_USAF1951_PPP0.5//raw
 ```
 
+If you want to train on a specific GPU (e.g., GPU 2):
+```bash
+CUDA_VISIBLE_DEVICES=2 \
+python run_QFLIM.py \
+  --folderName .//simu_USAF1951_PPP0.5//raw
+```
+
 This script will:
 - Read the raw data
 - Perform training and inference for both lifetime and intensity
