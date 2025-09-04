@@ -89,7 +89,7 @@ def main():
     in_contrast = [0, 0.5]
     colormapName = 'weddingdayblues'
     flag_white = 0
-    cm  = findAndLoadMat(colormapName+f"_double.mat", "..//..//")
+    cm  = findAndLoadMat(colormapName+f"_double.mat", ".//0_simulations//utils//utils_lut")
 
     results_lt_QFLIM_RGB = inwlt(lifetime_guess[0], intensity_guess[0], lt_contrast, in_contrast, cm, flag_white)
     dropFrames = int((args.patch_size[0] - 1) / 2)
