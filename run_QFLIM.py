@@ -48,6 +48,7 @@ def main():
         args.savepath =  os.path.dirname(args.folderName) + f'//QFLIM'
     os.makedirs(args.savepath, exist_ok=True)
     args.ngpu = str(args.gpu).count(',') + 1
+    os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
     args.input_frames = args.patch_size[0]
     args.batch_size = 1
 
