@@ -29,7 +29,7 @@ def main():
     ## by makeing full use of spatial-temporal information.
     ## Eom, M. et al. Statistically unbiased prediction enables accurate denoising of voltage imaging data. Nature Methods (2023).
     ## https://github.com/NICALab/SUPPORT
-    parser.add_argument("--depth", type=int, default=5, help="the number of blind spot convolutions, must be an odd number")
+    parser.add_argument("--depth", type=int, default=5, help="the number of blind spot convolutions")
     parser.add_argument("--blind_conv_channels", type=int, default=64, help="the number of channels of blind spot convolutions")
     parser.add_argument("--one_by_one_channels", type=int, default=[32, 16], nargs="+", help="the number of channels of 1x1 convolutions")
     parser.add_argument("--last_layer_channels", type=int, default=[64, 32, 16], nargs="+", help="the number of channels of 1x1 convs after UNet")
