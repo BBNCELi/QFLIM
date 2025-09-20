@@ -94,7 +94,8 @@ def main():
 
     results_lt_QFLIM_RGB = inwlt(lifetime_guess[0], intensity_guess[0], lt_contrast, in_contrast, cm, flag_white)
     dropFrames = int((args.patch_size[0] - 1) / 2)
-    results_lt_QFLIM_RGB = results_lt_QFLIM_RGB[dropFrames:-dropFrames,:,:,:]
+    if dropFrames > 0:
+        results_lt_QFLIM_RGB = results_lt_QFLIM_RGB[dropFrames:-dropFrames,:,:,:]
 
     lt_low, lt_high = lt_contrast
     in_low, in_high = in_contrast
