@@ -72,6 +72,7 @@ class infolutionHole2d(nn.Module):
         stride=1,
         padding=0,
         bias=True,
+        dilation = 1,
     ):
         super(infolutionHole2d, self).__init__()
 
@@ -81,6 +82,7 @@ class infolutionHole2d(nn.Module):
         self.kernel_size = kernel_size
         self.stride = stride
         self.padding = padding
+        self.dilation = dilation,
 
         # weight
         _w = torch.empty(
@@ -123,7 +125,7 @@ class infolutionHole2d(nn.Module):
         )
         _kernel = _kernel.view([self._oc, self._ic, self.kernel_size, self.kernel_size])
 
-        o1 = F.conv2d(lifetime, _kernel, stride=self.stride, padding = self.padding, bias = self.bias)
+        o1 = F.conv2d(lifetime, _kernel, stride=self.stride, padding = self.padding, dilation=self.dilation, bias = self.bias)
 
         _kernel_intensity = torch.ones_like(self.weight)
         _kernel_intensity = torch.cat(
@@ -134,7 +136,7 @@ class infolutionHole2d(nn.Module):
         )
         _kernel_intensity = _kernel_intensity.view([self._oc, self._ic, self.kernel_size, self.kernel_size])
 
-        o2 = F.conv2d(intensity, _kernel_intensity, stride=self.stride, padding = self.padding)
+        o2 = F.conv2d(intensity, _kernel_intensity, stride=self.stride, padding = self.padding, dilation=self.dilation)
 
         o = o1 / (o2 + 1e-8) * self.kernel_size * self.kernel_size
 

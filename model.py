@@ -515,6 +515,7 @@ class QFLIM(nn.Module):
                         stride=1,
                         padding=pd[0],
                         bias=False,
+                        dilation = pd[0],
                     )
                 )
             else:
@@ -556,6 +557,7 @@ class QFLIM(nn.Module):
                         stride=1,
                         padding=pd[0] * 2,
                         bias=False,
+                        dilation = pd[0],
                     )
                 )
             else:
@@ -585,7 +587,8 @@ class QFLIM(nn.Module):
                 )
             else:
                 c_in = (
-                    self.blind_conv_channels * 2
+                    # self.blind_conv_channels * 2
+                    self.blind_conv_channels * (int(self.depth3x3 > 0) + int(self.depth5x5 > 0))
                     if idx == 0
                     else self.one_by_one_channels[idx - 1]
                 )

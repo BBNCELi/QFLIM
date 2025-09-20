@@ -202,7 +202,7 @@ def train(
                         acq_idx, t_target, stack_x_start, stack_x_end, stack_y_start, stack_y_end = patch_indices_stich_stack[bi].int().tolist()
 
                         output_stack[acq_idx][t_target, stack_x_start:stack_x_end, stack_y_start:stack_y_end] \
-                            = output2save(output[bi].squeeze()[patch_x_start:patch_x_end, patch_y_start:patch_y_end].cpu(), feature)
+                            = output2save(output[bi].squeeze()[patch_x_start:patch_x_end, patch_y_start:patch_y_end].cpu().numpy(), feature)
                         
                 for idx, output_stack_here in enumerate(output_stack):
                     saveastiff(output_stack_here, f"{savepath}//output_{feature}_{idx}_epoch{epoch}.tif")
